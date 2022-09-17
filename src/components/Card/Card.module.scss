@@ -9,7 +9,6 @@
   gap: 14px 0;
   position: relative;
 }
-
 .info {
   display: flex;
   justify-content: space-between;
@@ -20,12 +19,10 @@
   line-height: 17px;
   margin: 0;
 }
-
 .image {
   width: 133px;
   height: 110px;
 }
-
 .btn {
   border: none;
   width: 32px;
@@ -40,17 +37,14 @@
     background-image: url(../../images/card-btn-checked.svg);
   }
 }
-
 .favorite {
   position: absolute;
   cursor: pointer;
 }
-
 .price {
   display: flex;
   flex-direction: column;
 }
-
 .priceText {
   text-transform: uppercase;
   font-weight: 500;
@@ -59,13 +53,11 @@
   text-transform: uppercase;
   color: #bdbdbd;
 }
-
 .priceValue {
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
 }
-
 @media (max-width: 1079px) {
   .card {
     max-width: 100%;

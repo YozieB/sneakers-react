@@ -16,8 +16,10 @@ export default function Cart({
 }) {
   const [order, setOrder] = useState(false)
   const [orderId, setOrderId] = useState(null)
-
+  const { cartItems, setCartItems, getTotalPrice, totalPrice, getPrice } =
+    useContext(AppContext)
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
   async function onClickOrderBtn() {
     try {
       setIsOrderLoading(true)
@@ -43,8 +45,6 @@ export default function Cart({
     setCartItems([])
     setIsOrderLoading(false)
   }
-  const { cartItems, setCartItems, getTotalPrice, totalPrice, getPrice } =
-    useContext(AppContext)
   return (
     <div
       className={

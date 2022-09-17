@@ -60,14 +60,18 @@ function App() {
   // getting ref for outside click close
   const overlayRef = useRef()
 
+  // openning cart
   function handleCartOpen() {
     setCartOpened(true)
   }
+  // using ref for closing cart by clicking outside
   function handleCartClose(e) {
     if (e.target === overlayRef.current) {
       setCartOpened(false)
     }
   }
+
+  // logic for adding items to cart (complicated because of mockapi.io)
   function handleAddButtonClick(obj) {
     const findItem = cartItems.find(
       cartObj => Number(cartObj.parentId) === Number(obj.parentId)
@@ -92,6 +96,8 @@ function App() {
         .catch(error => console.log(`Ошибка: ${error}`))
     }
   }
+
+  // logic for adding items to favorites (complicated because of mockapi.io)
   function onAddFavorite(obj) {
     console.log(obj)
     const findItem = favorites.find(
@@ -118,6 +124,7 @@ function App() {
     }
   }
 
+  // removing item from cart
   function handleRemoveItem(id) {
     axios
       .delete(`https://6321c35882f8687273b88471.mockapi.io/cart/${id}`)
@@ -126,14 +133,18 @@ function App() {
       })
       .catch(error => console.log(`Ошибка: ${error}`))
   }
+
+  // getting search value
   function onChangeSearchInput(e) {
     setSearchValue(e.target.value)
   }
 
+  // checking if item already added
   const handleItemAdded = id => {
     return cartItems.some(obj => Number(obj.parentId) === Number(id))
   }
 
+  // checking if item already added
   const handleFavoriteAdded = id => {
     return favorites.some(obj => Number(obj.parentId) === Number(id))
   }

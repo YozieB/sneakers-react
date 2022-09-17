@@ -14,7 +14,6 @@
   transition: transform 0.3s ease;
   transform: translateX(0);
   overflow: hidden;
-
   @media (max-width: 475px) {
     max-width: 85%;
     padding: 20px 0 20px 20px;
@@ -49,7 +48,6 @@
     @media (max-width: 475px) {
       padding: 20px 15px;
       flex-direction: column;
-      /* text-align: center; */
       gap: 10px 0;
     }
   }
@@ -83,7 +81,6 @@
       top: 10px;
     }
   }
-
   .menu {
     margin-top: auto;
     display: flex;
@@ -94,7 +91,6 @@
       padding-right: 20px;
     }
   }
-
   .menuItem {
     display: flex;
     gap: 0 8px;
