@@ -24,7 +24,6 @@
   max-width: 120px;
 }
 .menuBtn {
-  background-image: url(../../images/arrow-btn-empty.svg);
   display: block;
   background-repeat: no-repeat;
   background-position: left 35px center;
@@ -46,5 +45,8 @@
   }
   &:active {
     background-color: darken(#9dd558, 3%);
+  }
+  @media (max-width: 475px) {
+    max-width: 100%;
   }
 }

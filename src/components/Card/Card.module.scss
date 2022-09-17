@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px 0;
+  position: relative;
 }
 
 .info {
@@ -63,4 +64,19 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
+}
+
+@media (max-width: 1079px) {
+  .card {
+    max-width: 100%;
+    align-items: center;
+    padding: 30px;
+  }
+  .info {
+    width: 100%;
+  }
+  .favorite {
+    left: 30px;
+    top: 30px;
+  }
 }

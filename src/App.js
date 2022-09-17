@@ -19,6 +19,14 @@ function App() {
   const [isOrderLoading, setIsOrderLoading] = useState(false)
   const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0)
   const totalCount = cartItems.length
+  const totalFavoritesCount = favorites.length
+  // prevent scrolling if cart opened
+  useEffect(() => {
+    cartOpened
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto')
+  }, [cartOpened])
+  // making price output beautiful
   function getPrice(amount) {
     amount = String(amount).split('')
     switch (amount.length) {
@@ -41,11 +49,15 @@ function App() {
 
     return amount.join('')
   }
+
+  // calculating price for header / cart
   function getTotalPrice() {
     return cartItems.reduce((sum, obj) => Number(obj.price) + sum, 0)
   }
+
   // getting ref for outside click close
   const overlayRef = useRef()
+
   function handleCartOpen() {
     setCartOpened(true)
   }
@@ -152,7 +164,11 @@ function App() {
           getPrice,
         }}
       >
-        <Header onCartOpen={handleCartOpen} totalCount={totalCount} />
+        <Header
+          onCartOpen={handleCartOpen}
+          totalCount={totalCount}
+          totalFavoritesCount={totalFavoritesCount}
+        />
         <Routes>
           <Route
             path='/favorites'

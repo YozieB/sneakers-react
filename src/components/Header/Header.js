@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 import { useContext } from 'react'
 import AppContext from '../../context/AppContext'
-export default function Header({ onCartOpen, totalCount }) {
+export default function Header({
+  onCartOpen,
+  totalCount,
+  totalFavoritesCount,
+}) {
   const { getTotalPrice, getPrice } = useContext(AppContext)
   return (
     <header className={styles.header}>
@@ -33,7 +37,14 @@ export default function Header({ onCartOpen, totalCount }) {
         </li>
         <li className={styles.listItem}>
           <Link className={styles.listLink} to='/favorites'>
-            <img src={favoritePath} alt='Избранное' />
+            <picture
+              data-fav-count={totalFavoritesCount}
+              className={
+                totalFavoritesCount > 0 ? styles.favIconCount : styles.cartIcon
+              }
+            >
+              <img src={favoritePath} alt='Избранное' />
+            </picture>
           </Link>
         </li>
       </ul>
