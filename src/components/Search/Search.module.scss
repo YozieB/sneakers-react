@@ -5,6 +5,7 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
+  min-width: 280px;
   &:has(.input:focus) {
     outline: 1px solid #f3f3f3;
   }
