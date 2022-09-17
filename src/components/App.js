@@ -194,7 +194,7 @@ function App() {
             }
           />
           <Route
-            path='/'
+            path='/sneakers-react'
             element={
               <Home
                 searchValue={searchValue}
@@ -206,7 +206,6 @@ function App() {
             }
           />
         </Routes>
-
         <Overlay
           onCartClose={isOrderLoading ? null : handleCartClose}
           onRef={overlayRef}

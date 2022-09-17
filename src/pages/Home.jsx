@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import Catalog from '../components/Catalog/Catalog'
 import Card from '../components/Card/Card'
-
 import FakeCard from '../components/Card/FakeCard'
 import AppContext from '../context/AppContext'
 import Search from '../components/Search/Search'

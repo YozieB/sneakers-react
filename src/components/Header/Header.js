@@ -13,7 +13,7 @@ export default function Header({
   const { getTotalPrice, getPrice } = useContext(AppContext)
   return (
     <header className={styles.header}>
-      <Link className={styles.link} to='/'>
+      <Link className={styles.link} to='/sneakers-react'>
         <div className={styles.info}>
           <img className={styles.image} src={logoPath} alt='Лого' />
           <div>
