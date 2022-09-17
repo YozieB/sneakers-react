@@ -7,7 +7,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  padding: 30px;
+  padding: 30px 0 30px 30px;
   display: flex;
   gap: 30px 0;
   flex-direction: column;
@@ -17,6 +17,7 @@
 
   @media (max-width: 475px) {
     max-width: 85%;
+    padding: 20px 0 20px 20px;
   }
   .title {
     margin: 0;
@@ -31,6 +32,10 @@
     flex-direction: column;
     gap: 20px 0;
     overflow: auto;
+    padding-right: 30px;
+    @media (max-width: 475px) {
+      padding-right: 20px;
+    }
   }
   .item {
     display: flex;
@@ -40,7 +45,7 @@
     border: 1px solid #f3f3f3;
     border-radius: 20px;
     gap: 0 20px;
-    padding: 20px 20px 30px 20px;
+    padding: 20px;
     @media (max-width: 475px) {
       padding: 20px 15px;
       flex-direction: column;
@@ -84,6 +89,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px 0;
+    padding-right: 30px;
+    @media (max-width: 475px) {
+      padding-right: 20px;
+    }
   }
 
   .menuItem {

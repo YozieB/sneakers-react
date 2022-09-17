@@ -5,7 +5,7 @@ import Card from '../components/Card/Card'
 import FakeCard from '../components/Card/FakeCard'
 import AppContext from '../context/AppContext'
 import Search from '../components/Search/Search'
-
+import styles from '../components/App.module.scss'
 export default function Home({
   searchValue,
   onChangeSearchInput,
@@ -16,8 +16,8 @@ export default function Home({
   const { items } = useContext(AppContext)
   return (
     <>
-      <div className='page__header'>
-        <h1 className='page__title'>
+      <div className={styles.header}>
+        <h1 className={styles.title}>
           {searchValue ? `Поиск по запросу: ${searchValue}` : 'Все кроссовки'}
         </h1>
         <Search

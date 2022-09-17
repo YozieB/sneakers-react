@@ -1,13 +1,13 @@
 import { useRef, useState, useEffect } from 'react'
-import './App.css'
 import axios from 'axios'
-import Favorites from './pages/Favorites'
-import Header from './components/Header/Header'
-import Cart from './components/Cart/Cart'
-import Overlay from './components/Overlay/Overlay'
+import Favorites from '../pages/Favorites'
+import Header from './Header/Header'
+import Cart from './Cart/Cart'
+import Overlay from './Overlay/Overlay'
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import AppContext from './context/AppContext'
+import Home from '../pages/Home'
+import AppContext from '../context/AppContext'
+import styles from './App.module.scss'
 
 function App() {
   const [cartOpened, setCartOpened] = useState(false)
@@ -20,12 +20,14 @@ function App() {
   const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0)
   const totalCount = cartItems.length
   const totalFavoritesCount = favorites.length
+
   // prevent scrolling if cart opened
   useEffect(() => {
     cartOpened
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'auto')
   }, [cartOpened])
+
   // making price output beautiful
   function getPrice(amount) {
     amount = String(amount).split('')
@@ -67,11 +69,9 @@ function App() {
     }
   }
   function handleAddButtonClick(obj) {
-    console.log(obj)
     const findItem = cartItems.find(
       cartObj => Number(cartObj.parentId) === Number(obj.parentId)
     )
-    console.log(findItem)
     if (findItem) {
       axios
         .delete(
@@ -137,6 +137,8 @@ function App() {
   const handleFavoriteAdded = id => {
     return favorites.some(obj => Number(obj.parentId) === Number(id))
   }
+
+  // getting data from mockapi
   useEffect(() => {
     Promise.all([
       axios.get('https://6321c35882f8687273b88471.mockapi.io/cart'),
@@ -150,7 +152,7 @@ function App() {
     })
   }, [])
   return (
-    <div className='page'>
+    <div className={styles.page}>
       <AppContext.Provider
         value={{
           cartItems,

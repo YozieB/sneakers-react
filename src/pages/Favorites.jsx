@@ -5,6 +5,7 @@ import AppContext from '../context/AppContext'
 import FakeCard from '../components/Card/FakeCard'
 import Info from '../components/Info/Info'
 import emptyFavorites from '../images/fav-empty.jpg'
+import styles from '../components/App.module.scss'
 export default function Favorites({
   onAddFavorite,
   handleAddButtonClick,
@@ -13,8 +14,8 @@ export default function Favorites({
   const { favorites } = useContext(AppContext)
   return (
     <>
-      <div className='page__header'>
-        <h1 className='page__title'>Мои закладки</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Мои закладки</h1>
       </div>
       <Catalog>
         {favorites.length > 0 ? (
@@ -46,26 +47,6 @@ export default function Favorites({
             hasButton={false}
           />
         )}
-        {/*         {isLoaded ? (
-          <>
-            {favorites.map(el => (
-              <Card
-                key={el.image}
-                id={el.id}
-                parentId={el.parentId}
-                handleFavoriteClick={onAddFavorite}
-                handleAddButtonClick={handleAddButtonClick}
-                {...el}
-              />
-            ))}
-          </>
-        ) : (
-          <>
-            {[...Array(10)].map((el, i) => (
-              <FakeCard key={i} />
-            ))}
-          </>
-        )} */}
       </Catalog>
     </>
   )
