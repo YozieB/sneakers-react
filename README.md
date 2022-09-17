@@ -30,4 +30,4 @@
 
 ## Github Pages
 
-https://yozieb.github.io/sneakers-react/index.html
+<a href="https://yozieb.github.io/sneakers-react" target="_blank">https://yozieb.github.io/sneakers-react</a>
