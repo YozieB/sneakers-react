@@ -6,4 +6,12 @@
   bottom: 0;
   z-index: 1;
   background: rgba(0, 0, 0, 0.5);
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.overlayHidden {
+  visibility: hidden;
+  opacity: 0;
 }

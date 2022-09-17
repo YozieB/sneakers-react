@@ -1,0 +1,24 @@
+.search {
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  padding: 15px 20px;
+  white-space: nowrap;
+  &:has(.input:focus) {
+    outline: 1px solid #f3f3f3;
+  }
+}
+
+.image {
+  margin-right: 14px;
+}
+
+.input {
+  border: none;
+  overflow: hidden;
+  &::placeholder {
+    color: #c4c4c4;
+  }
+  &:focus {
+    outline: none;
+  }
+}

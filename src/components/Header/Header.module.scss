@@ -42,7 +42,9 @@
   .list {
     display: flex;
     list-style-type: none;
-    gap: 0 30px;
+    gap: 0 15px;
+    margin: 0;
+    padding: 0;
     align-items: center;
   }
   .listItem {
@@ -53,5 +55,30 @@
   .listLink {
     display: flex;
     align-items: center;
+  }
+
+  .cartIcon {
+    position: relative;
+  }
+  .cartIconCount {
+    position: relative;
+    &::before {
+      content: attr(data-count);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter';
+      font-weight: 700;
+      font-size: 9px;
+      position: absolute;
+      top: -6px;
+      left: 15px;
+      width: 15px;
+      height: 15px;
+      z-index: 2;
+      border-radius: 50%;
+      background-color: #9dd558;
+    }
   }
 }

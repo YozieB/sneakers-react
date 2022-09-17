@@ -1,0 +1,50 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  .emptyTitle {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .emptyText {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    opacity: 0.4;
+  }
+}
+.emptyImg {
+  max-width: 120px;
+}
+.menuBtn {
+  background-image: url(../../images/arrow-btn-empty.svg);
+  display: block;
+  background-repeat: no-repeat;
+  background-position: left 35px center;
+  margin-top: 40px;
+  border: none;
+  background-color: #9dd558;
+  border-radius: 18px;
+  height: 55px;
+  width: 100%;
+  max-width: 75%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  transition: background-position 0.3s ease;
+  &:hover {
+    background-position: left 10px center;
+    background-color: lighten(#9dd558, 3%);
+  }
+  &:active {
+    background-color: darken(#9dd558, 3%);
+  }
+}

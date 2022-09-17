@@ -1,10 +1,12 @@
 import logoPath from '../../images/logo.png'
 import cartPath from '../../images/cart.svg'
-import userPath from '../../images/user.svg'
 import favoritePath from '../../images/favorite.svg'
 import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
-export default function Header({ onCartOpen }) {
+import { useContext } from 'react'
+import AppContext from '../../context/AppContext'
+export default function Header({ onCartOpen, totalCount }) {
+  const { getTotalPrice, getPrice } = useContext(AppContext)
   return (
     <header className={styles.header}>
       <Link className={styles.link} to='/'>
@@ -18,16 +20,21 @@ export default function Header({ onCartOpen }) {
       </Link>
       <ul className={styles.list}>
         <li className={styles.listItem} onClick={onCartOpen}>
-          <img src={cartPath} alt='Корзина' />
-          <span className={styles.price}>1205 руб.</span>
+          <picture
+            className={totalCount > 0 ? styles.cartIconCount : styles.cartIcon}
+            data-count={totalCount}
+          >
+            <img className={styles.cartIcon} src={cartPath} alt='Корзина' />
+          </picture>
+          <span className={styles.price}>
+            {getPrice(getTotalPrice()) + ' '}
+            руб.
+          </span>
         </li>
         <li className={styles.listItem}>
           <Link className={styles.listLink} to='/favorites'>
             <img src={favoritePath} alt='Избранное' />
           </Link>
-        </li>
-        <li className={styles.listItem}>
-          <img src={userPath} alt='Пользователь' />
         </li>
       </ul>
     </header>
