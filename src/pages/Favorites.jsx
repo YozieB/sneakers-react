@@ -14,7 +14,7 @@ export default function Favorites({
   const { favorites } = useContext(AppContext)
   return (
     <>
-      <div className={styles.header}>
+        <div className={styles.header}>
         <h1 className={styles.title}>Мои закладки</h1>
       </div>
       <Catalog>
